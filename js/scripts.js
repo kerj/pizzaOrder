@@ -9,7 +9,6 @@ PizzaOrder.prototype.finalizeOrder = function() {
       this.orderTotal += this.pizzas[i].pricePer;
     }
     return this.orderTotal
-    console.log(orderTotal);
   }else{}
 }
 
@@ -55,8 +54,6 @@ Pizza.prototype.pricedPizza = function() {
     }
     this.pricePer += pizzasPrice;
   }
-  //display this to DOM
-
 }
 
 var newOrder = new PizzaOrder();
@@ -69,11 +66,14 @@ $(document).ready(function() {
       toppings.push($(this).val());
     });
     var newPizza = new Pizza(size, crust, toppings);
+
+    $("#pizzaList").append("<li id=" + newPizza.pizzaId + ">" + newPizza.size + ", " + newPizza.crust + ", " + toppings + " $" + newPizza.pricePer.toFixed(2) + "</li>")
   })
   $("form").submit(function(event)  {
     event.preventDefault();
     newOrder.finalizeOrder();
+    $("#pizzaList").prepend("<h1>" + "Total Due " + "$" + newOrder.orderTotal.toFixed(2) + "</h1>")
     $("div#orderHere").addClass("hidden");
-    $("#checkOutScreen").removeClass();
+    $("#checkOut").removeClass();
   })
 })
