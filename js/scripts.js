@@ -56,7 +56,14 @@ Pizza.prototype.pricedPizza = function() {
   }
 }
 
+
+
 var newOrder = new PizzaOrder();
+
+// function goBack(){
+//   var newOrder = new PizzaOrder();
+// }
+
 $(document).ready(function() {
   $("#addMore").on("click",function() {
     var size = $("input[name='size']:checked").val();
@@ -66,14 +73,21 @@ $(document).ready(function() {
       toppings.push($(this).val());
     });
     var newPizza = new Pizza(size, crust, toppings);
-
-    $("#pizzaList").append("<li id=" + newPizza.pizzaId + ">" + newPizza.size + ", " + newPizza.crust + ", " + toppings + " $" + newPizza.pricePer.toFixed(2) + "</li>")
+    $("#pizzaList").append("<li id=" + newPizza.pizzaId + ">" + newPizza.size + ", " + newPizza.crust + ", " + toppings + " Pizza" + " $" + newPizza.pricePer.toFixed(2) + "</li>")
   })
-  $("form").submit(function(event)  {
+  // $("#goBack").on("click", function() {
+  //   $("#checkOutScreen").addClass("hidden");
+  //   $("div#orderHere").removeClass("hidden");
+  //   $("#pizzaList").empty();
+  //   goBack();
+  // })
+
+  $("form").submit(function(event) {
     event.preventDefault();
+    newOrder.orderTotal = 0
     newOrder.finalizeOrder();
     $("#pizzaList").prepend("<h1>" + "Total Due " + "$" + newOrder.orderTotal.toFixed(2) + "</h1>")
     $("div#orderHere").addClass("hidden");
-    $("#checkOut").removeClass();
+    $("#checkOutScreen").removeClass("hidden");
   })
 })
