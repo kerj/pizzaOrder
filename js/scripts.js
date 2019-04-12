@@ -54,6 +54,10 @@ Pizza.prototype.addPizza = function () {
   this.pricedPizza()
 };
 
+$(document){
+  $("#addMore").on("click")function()
+}
+
 var newOrder = new PizzaOrder();
 var newPizza = new Pizza("Large", "Pan", ["pepperoni", "mushroom", "Bell pepper", "Extra-Cheese", "pepperoni", "Extra-Cheese", "Mushroom", "Pineapple"])
 var newPizza2 = new Pizza("Large", "Pan", ["pepperoni", "Extra-Cheese"])

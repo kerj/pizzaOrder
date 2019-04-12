@@ -10,7 +10,44 @@
   </head>
   <body>
     <div class="container">
-      
+      <div class="jumbotron header">
+        <h1>pizzApostrophe</h1>
+        <h4>Don't miss this!</h4>
+      </div>
+      <div class="orderhere">
+        <form>
+          <div id="size">
+            <h3>Sizes</h3>
+            <input type="radio" name="size" value="Small" checked>8" Pie<br>
+            <input type="radio" name="size" value="Medium">12" Pie<br>
+            <input type="radio" name="size" value="Large">16" Pie
+          </div>
+          <h3>Choose a crust:</h3>
+          <select class="form-control" id="crust">
+            <option value="hand-tossed">Hand-Tossed</option>
+            <option value="thin">Thin($+1)</option>
+            <option value="pan">Pan($+1)</option>
+          </select>
+          <h3>Toppings, First One on the House</h3>
+          <h4>Then $1.50 per</h4>
+          <h3>Meats</h3>
+          <input type="checkbox" name="topping1" value="1">Bacon<br>
+          <input type="checkbox" name="topping2" value="1">Beef<br>
+          <input type="checkbox" name="topping3" value="1">Chicken<br>
+          <input type="checkbox" name="topping4" value="1">Pepperoni<br>
+          <input type="checkbox" name="topping5" value="1">Sausage<br>
+          <input type="checkbox" name="topping6" value="1">Zeabra<br>
+          <h3>Veggies & Fruit</h3>
+          <input type="checkbox" name="topping1" value="1">Diced Tomato<br>
+          <input type="checkbox" name="topping2" value="1">Spinach<br>
+          <input type="checkbox" name="topping3" value="1">Pineapple<br>
+          <input type="checkbox" name="topping4" value="1">Artichoke<br>
+          <input type="checkbox" name="topping5" value="1">Mushroom<br>
+          <input type="checkbox" name="topping6" value="1">Olives<br>
+          <button id='addMore' type="button">Add a Pizza</button>
+          <button id='submit' type="submit">Submit Order</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
