@@ -1,6 +1,7 @@
 function PizzaOrder() {
   this.pizzas = [];
   this.pizzaId = 0;
+  this.orderTotal = 0;
 }
 
 function Pizza(size, crust, toppings) {
@@ -8,6 +9,25 @@ function Pizza(size, crust, toppings) {
   this.crust = crust;
   this.toppings = [];
   this.addToppings(toppings);
+}
+
+PizzaOrder.prototype.pricedPizza = function(newPizza) {
+  var pizzaPrice = 0;
+  var orderTotal = 0;
+  console.log(this.pizzas[0].toppings);
+  this.pizzas.map(function() {
+    if (newPizza.size === "Small"){
+      pizzaPrice += 8
+    }else if (newPizza.size === "Medium") {
+      pizzaPrice += 12
+    }else{pizzaPrice += 14}
+    while(newPizza.toppings.length >= 2){
+      pizzaPrice += 1.5
+      newPizza.toppings.pop()
+    }
+    orderTotal += pizzaPrice
+  })
+  this.orderTotal = orderTotal
 }
 
 Pizza.prototype.addToppings = function(toppings) {
@@ -23,4 +43,7 @@ PizzaOrder.prototype.addPizza = function (pizza) {
 
 
 var newOrder = new PizzaOrder();
-var newPizza = new Pizza("Lg", "Pan", ["pepperoni", "mushroom"])
+var newPizza = new Pizza("Large", "Pan", ["pepperoni", "mushroom"])
+console.log(newOrder.addPizza(newPizza));
+console.log(newOrder.pricedPizza(newPizza));
+console.log(newOrder);
