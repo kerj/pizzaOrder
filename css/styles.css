@@ -8,3 +8,7 @@
 button {
   margin-top: 5%;
 }
+
+.hidden {
+  display: none;
+}

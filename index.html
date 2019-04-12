@@ -14,7 +14,7 @@
         <h1>pizzApostrophe</h1>
         <h4>Don't miss this!</h4>
       </div>
-      <div class="orderhere">
+      <div id="orderHere">
         <form>
           <div id="size">
             <h3>Sizes</h3>
@@ -28,24 +28,27 @@
             <option value="thin">Thin($+1)</option>
             <option value="pan">Pan($+1)</option>
           </select>
-          <h3>Toppings, First One on the House</h3>
-          <h4>Then $1.50 per</h4>
-          <h3>Meats</h3>
-          <input type="checkbox" name="topping1" value="1">Bacon<br>
-          <input type="checkbox" name="topping2" value="1">Beef<br>
-          <input type="checkbox" name="topping3" value="1">Chicken<br>
-          <input type="checkbox" name="topping4" value="1">Pepperoni<br>
-          <input type="checkbox" name="topping5" value="1">Sausage<br>
-          <input type="checkbox" name="topping6" value="1">Zeabra<br>
-          <h3>Veggies & Fruit</h3>
-          <input type="checkbox" name="topping1" value="1">Diced Tomato<br>
-          <input type="checkbox" name="topping2" value="1">Spinach<br>
-          <input type="checkbox" name="topping3" value="1">Pineapple<br>
-          <input type="checkbox" name="topping4" value="1">Artichoke<br>
-          <input type="checkbox" name="topping5" value="1">Mushroom<br>
-          <input type="checkbox" name="topping6" value="1">Olives<br>
-          <button id='addMore' type="button">Add a Pizza</button>
-          <button id='submit' type="submit">Submit Order</button>
+          <div id="toppings">
+            <h3>Toppings, First One on the House</h3>
+            <h4>Then $1.50 per</h4>
+            <h3>Meats</h3>
+            <input type="checkbox" name="topping" value="Bacon">Bacon<br>
+            <input type="checkbox" name="topping" value="Beef">Beef<br>
+            <input type="checkbox" name="topping" value="Extra Cheese">Extra Cheese<br>
+            <input type="checkbox" name="topping" value="Chicken">Chicken<br>
+            <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
+            <input type="checkbox" name="topping" value="Sausage">Sausage<br>
+            <input type="checkbox" name="topping" value="Zebra">Zebra<br>
+            <h3>Veggies & Fruit</h3>
+            <input type="checkbox" name="topping" value="Tomato">Tomato<br>
+            <input type="checkbox" name="topping" value="Spinach">Spinach<br>
+            <input type="checkbox" name="topping" value="Pinapple">Pineapple<br>
+            <input type="checkbox" name="topping" value="Artichoke">Artichoke<br>
+            <input type="checkbox" name="topping" value="Mushroom">Mushroom<br>
+            <input type="checkbox" name="topping" value="Olives">Olives<br>
+            <button id='addMore' type="button">Add a Pizza</button>
+            <button id='submit' type="submit">Submit Order</button>
+          </div>
         </form>
       </div>
     </div>
